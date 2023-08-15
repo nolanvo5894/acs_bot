@@ -1,6 +1,6 @@
 import os
 
-#os.environ["OPENAI_API_KEY"] = "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"
+
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
