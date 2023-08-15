@@ -1,7 +1,4 @@
 import os
-
-
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -15,6 +12,7 @@ from streamlit_chat import message
 from streamlit_extras.add_vertical_space import add_vertical_space
 
 st.set_page_config(page_title="ACS Cancer Bot", page_icon=":hospital:")
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 if 'buffer_memory' not in st.session_state:
     st.session_state.buffer_memory = ConversationBufferMemory(memory_key='chat_history', output_key='answer', return_messages=True)
