@@ -1,4 +1,7 @@
 import os
+
+
+
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -13,7 +16,6 @@ from streamlit_extras.add_vertical_space import add_vertical_space
 
 st.set_page_config(page_title="ACS Cancer Bot", page_icon=":hospital:")
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
-
 if 'buffer_memory' not in st.session_state:
     st.session_state.buffer_memory = ConversationBufferMemory(memory_key='chat_history', output_key='answer', return_messages=True)
 
@@ -38,7 +40,7 @@ qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-3.
 with st.sidebar:
     st.title('ACS Cancer Bot 🤗💬')
     st.markdown('''This is a chatbot that can answer questions about cancer.
-                It gets its info from up-to-date resources on the American Cancer Society's website.
+                It gets its info from up-to-date resources on the American Cancer Society's web page on Cancer Types (https://www.cancer.org/cancer/types.html)
                 Please ask it questions you want to know about common cancers, treatments, and more.''')
     add_vertical_space(5)
     
