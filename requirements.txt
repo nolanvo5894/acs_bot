@@ -4,3 +4,4 @@ streamlit-chat
 streamlit-extras
 openai
 chromadb
+tiktoken
