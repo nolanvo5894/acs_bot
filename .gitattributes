@@ -1,0 +1,4 @@
+.parquet filter=lfs diff=lfs merge=lfs -text
+.bin filter=lfs diff=lfs merge=lfs -text
+acs_db/chroma-embeddings.parquet filter=lfs diff=lfs merge=lfs -text
+acs_db/index/index_0a5b74c0-0598-4ec0-9ba2-5f2d8418c03b.bin filter=lfs diff=lfs merge=lfs -text
