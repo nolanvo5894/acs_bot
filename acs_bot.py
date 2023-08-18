@@ -28,7 +28,7 @@ vectordb = Chroma(persist_directory=persist_directory,
 
 
 retriever = vectordb.as_retriever(search_kwargs={"k": 10})
-qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=5000),
+qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-4-0613', max_tokens=5000),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
                                                  return_source_documents=True)
