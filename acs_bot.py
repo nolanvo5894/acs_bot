@@ -14,7 +14,7 @@ import streamlit as st
 from streamlit_chat import message
 from streamlit_extras.add_vertical_space import add_vertical_space
 
-st.set_page_config(page_title="ACS Cancer Bot", page_icon=":hospital:")
+st.set_page_config(page_title="Cancer Bot", page_icon=":hospital:")
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 if 'buffer_memory' not in st.session_state:
     st.session_state.buffer_memory = ConversationBufferMemory(memory_key='chat_history', output_key='answer', return_messages=True)
@@ -38,9 +38,8 @@ qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-4-
 
 # Sidebar contents
 with st.sidebar:
-    st.title('ACS Cancer Bot 🤗💬')
+    st.title('Cancer Bot 🤗💬')
     st.markdown('''This is a chatbot that can answer questions about cancer.
-                It gets its info from up-to-date resources on the American Cancer Society's web page on Cancer Types (https://www.cancer.org/cancer/types.html)
                 Please ask it questions you want to know about common cancers, treatments, and more.''')
     add_vertical_space(5)
     
@@ -48,7 +47,7 @@ with st.sidebar:
 # Generate empty lists for generated and past.
 ## generated stores AI generated responses
 if 'responses' not in st.session_state:
-    st.session_state['responses'] = ["I'm ACS Bot, How may I help you?"]
+    st.session_state['responses'] = ["I'm Cancer Bot, How may I help you?"]
 ## past stores User's questions
 if 'requests' not in st.session_state:
     st.session_state['requests'] = ['Hi!']
