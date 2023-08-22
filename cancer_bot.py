@@ -8,6 +8,7 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
 from langchain.document_loaders import TextLoader, PyPDFLoader
 from langchain.document_loaders import DirectoryLoader
@@ -48,8 +49,8 @@ PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
 )
 
-retriever = vectordb.as_retriever(search_kwargs={"k": 100})
-qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=5000),
+retriever = vectordb.as_retriever(search_kwargs={"k": 30})
+qa_chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=300),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
                                                  return_source_documents=True,
