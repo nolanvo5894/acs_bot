@@ -34,15 +34,15 @@ from langchain import PromptTemplate
 prompt_template = """Read the question at the end.
 
 If the following pieces of context is relevant to the question, use them to answer the question at the end.
-If you don't see any relevant infomation to answer the question in the following context, SAY you 'DO NOT HAVE RELEVANT INFO'.
+If you don't see any relevant infomation to answer the question, SAY you 'DO NOT HAVE RELEVANT INFO'.
 Keep the answer less than 300 words
 
 
 {context}
 
 Question: {question}
-DO NOT START THE ANSWER WITH 'Context: '
-Answer in this format: RESPONSE: your answer
+Answer in this format: 
+RESPONSE: your answer
 """
 PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
