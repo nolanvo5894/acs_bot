@@ -75,7 +75,7 @@ response_container = st.container()
 # User input
 ## Function for taking user provided prompt as input
 def get_text():
-    input_text = st.chat_input("You: ", "", key="input")
+    input_text = st.chat_input("Please ask me something: ", key="input")
     return input_text
 ## Applying the user input box
 with input_container:
