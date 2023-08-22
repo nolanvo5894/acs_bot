@@ -36,7 +36,7 @@ prompt_template = """Read the question at the end.
 
 If the following pieces of context is relevant to the question, use them to answer the question at the end. 
 If you don't see any relevant infomation, do not answer and make sure to say you 'did not find relevant information in the database'.
-Keep the answer less than 300 words
+Keep the answer SHORT AND PRECISE
 
 
 Context: {context}
@@ -48,7 +48,7 @@ PROMPT = PromptTemplate(
 )
 
 retriever = vectordb.as_retriever(search_kwargs={"k": 30})
-qa_chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=450),
+qa_chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=300),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
                                                  return_source_documents=True,
