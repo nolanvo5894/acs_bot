@@ -31,8 +31,11 @@ vectordb = Chroma(persist_directory=persist_directory,
 
 from langchain import PromptTemplate
 
-prompt_template = """Use the following pieces of context to answer the question at the end. 
-If you don't see any relevant infomation, just say you cannot answer in a polite way.
+prompt_template = """Read the question at the end first and decide how to answer.
+If the question is about previous answers, use the memory as context.
+If the following pieces of context is relevant to the question, use them to answer the question at the end. 
+If you don't see any relevant infomation, make sure to say you 'did not find relevant information in the database'.
+
 
 {context}
 
@@ -43,7 +46,7 @@ PROMPT = PromptTemplate(
 )
 
 retriever = vectordb.as_retriever(search_kwargs={"k": 10})
-qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=5000),
+qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-4-0613', max_tokens=3000),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
                                                  return_source_documents=True,
