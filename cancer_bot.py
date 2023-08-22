@@ -41,7 +41,7 @@ Keep the answer less than 300 words
 {context}
 
 Question: {question}
-DO NOT LIST OUT THE CONTEXT
+DO NOT START THE ANSWER WITH 'Context: '
 Answer in this format: RESPONSE: your answer
 """
 PROMPT = PromptTemplate(
