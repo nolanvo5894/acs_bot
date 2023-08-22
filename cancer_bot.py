@@ -34,7 +34,7 @@ from langchain import PromptTemplate
 prompt_template = """There is a question after 'Question: '.
 
 If the following pieces of context is relevant to the question, use them to answer the question. 
-If you don't see any relevant infomation, SAY you 'NO DATA'.
+If you don't see any relevant infomation in those pieces of context, MAKE SURE to say 'NO DATA'.
 Keep the answer less than 300 words
 
 
