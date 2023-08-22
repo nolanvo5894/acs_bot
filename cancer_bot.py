@@ -34,12 +34,9 @@ from langchain import PromptTemplate
 prompt_template = """Read the question at the end.
 
 If the following pieces of context is relevant to the question, use them to answer the question at the end.
-If you don't see any relevant infomation to answer the question, SAY you 'DO NOT HAVE RELEVANT INFO'.
+If you don't see any relevant infomation to answer the question in the Context section below, SAY you 'DO NOT HAVE RELEVANT INFO'.
 Keep the answer less than 300 words
-
-
 Context: {context}
-
 Question: {question}
 Answer in this format: 
 RESPONSE: your answer
