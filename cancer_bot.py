@@ -32,7 +32,6 @@ vectordb = Chroma(persist_directory=persist_directory,
 from langchain import PromptTemplate
 
 prompt_template = """Read the question at the end.
-If the question is about previous answers, use the memory as context.
 If the following pieces of context is relevant to the question, use them to answer the question at the end. 
 If you don't see any relevant infomation, make sure to say you 'did not find relevant information in the database'.
 
