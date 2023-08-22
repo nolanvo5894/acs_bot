@@ -33,7 +33,8 @@ from langchain import PromptTemplate
 
 prompt_template = """Read the question at the end.
 If the following pieces of context is relevant to the question, use them to answer the question at the end. 
-If you don't see any relevant infomation, make sure to say you 'did not find relevant information in the database'.
+If you don't see any relevant infomation and don't provide an answer, say you 'did not find relevant information in the database'. 
+DO NOT mention the American Cancer Society in the answer
 
 
 {context}
