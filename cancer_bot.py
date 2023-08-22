@@ -41,6 +41,7 @@ Keep the answer less than 300 words
 {context}
 
 Question: {question}
+Answer in this format: RESPONSE: your answer
 """
 PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
