@@ -34,7 +34,7 @@ from langchain import PromptTemplate
 prompt_template = """Read the question at the end.
 
 If the following pieces of context is relevant to the question, use them to answer the question at the end. 
-If you don't see any relevant infomation and don't provide an answer, make sure to say you 'do not know'.
+If you don't see any relevant infomation in the context to answer the question and don't provide an answer, make sure to say you 'do not know'.
 Keep the answer less than 300 words
 
 
@@ -46,7 +46,7 @@ PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
 )
 
-retriever = vectordb.as_retriever(search_kwargs={"k": 50})
+retriever = vectordb.as_retriever(search_kwargs={"k": 35})
 qa_chain = ConversationalRetrievalChain.from_llm(llm=OpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=5000),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
