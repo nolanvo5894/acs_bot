@@ -75,7 +75,7 @@ response_container = st.container()
 # User input
 ## Function for taking user provided prompt as input
 def get_text():
-    input_text = st.text_input("You: ", "", key="input")
+    input_text = st.chat_input("You: ", "", key="input")
     return input_text
 ## Applying the user input box
 with input_container:
@@ -97,7 +97,7 @@ with response_container:
     if st.session_state['responses']:
         memory_len = len(st.session_state['responses'])
         for i in range(memory_len):
-            message(st.session_state['requests'][memory_len - i - 1], is_user=True, key=str(i) + '_user', avatar_style='thumbs')
-            message(st.session_state['responses'][memory_len - i - 1], key=str(i), avatar_style='bottts-neutral')
+            message(st.session_state['requests'][i], is_user=True, key=str(i) + '_user', avatar_style='thumbs')
+            message(st.session_state['responses'][i], key=str(i), avatar_style='fun-emoji')
 
 
