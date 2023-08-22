@@ -35,8 +35,8 @@ prompt_template = """Use the following pieces of context to answer the question 
 Context: {context}
 
 Question: {question}
-If the question is NOT about medical or health topics, SAY 'NO DATA'
-If you don't see relevant info to the answer in the context, SAY 'NO DATA'
+If the question is NOT about medical or health topics, DO NOT ASNWER AND SAY 'NO DATA'
+If you don't see relevant info to the answer in the context, DO NOT ANSWER AND SAY 'NO DATA'
 
 
 
