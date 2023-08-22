@@ -31,16 +31,12 @@ vectordb = Chroma(persist_directory=persist_directory,
 
 from langchain import PromptTemplate
 
-prompt_template = """There is a question after 'Question: '.
+prompt_template = """Here are some context information: {context} to answer a question below.
+Here is the question: {question}
 
 If the following pieces of context is relevant to the question, use them to answer the question. 
 If you don't see any relevant infomation in those pieces of context, MAKE SURE to say 'NO DATA'.
 Keep the answer less than 300 words
-
-
-{context}
-
-Question: {question}
 
 
 
