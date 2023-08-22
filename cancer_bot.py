@@ -35,7 +35,7 @@ from langchain import PromptTemplate
 prompt_template = """Read the question at the end.
 
 If the following pieces of context is relevant to the question, use them to answer the question at the end. 
-If you don't see any relevant infomation, SAY you 'did not find relevant information in the database'.
+If you don't see any relevant infomation in the context, SAY you 'did not find relevant information in the database'.
 Keep the answer SHORT 
 
 
@@ -47,7 +47,7 @@ PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
 )
 
-retriever = vectordb.as_retriever(search_kwargs={"k": 30})
+retriever = vectordb.as_retriever(search_kwargs={"k": 60})
 qa_chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=300),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
