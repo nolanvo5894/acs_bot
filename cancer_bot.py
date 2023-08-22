@@ -48,7 +48,7 @@ PROMPT = PromptTemplate(
 )
 
 retriever = vectordb.as_retriever(search_kwargs={"k": 50})
-qa_chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=1000),
+qa_chain = ConversationalRetrievalChain.from_llm(llm=ChatOpenAI(model_name = 'gpt-3.5-turbo-16k', max_tokens=500),
                                                  memory=st.session_state.buffer_memory,
                                                  retriever=retriever, 
                                                  return_source_documents=True,
