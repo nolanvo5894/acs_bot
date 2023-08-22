@@ -31,10 +31,10 @@ vectordb = Chroma(persist_directory=persist_directory,
 
 from langchain import PromptTemplate
 
-prompt_template = """Read the question: {question}.
-
-If the following pieces of context is relevant to the question, use them to answer the question. 
+prompt_template = """
 Read the context: {context}
+Read the question: {question}.
+If the following pieces of context is relevant to the question, use them to answer the question.
 If you don't see any relevant infomation and don't provide an answer, say you 'did not find relevant information in the database'. 
 DO NOT mention the American Cancer Society in the answer
 """
