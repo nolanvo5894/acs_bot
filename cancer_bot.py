@@ -34,7 +34,8 @@ from langchain import PromptTemplate
 
 prompt_template = """Read the question at the end.
 
-ONLY USE the following pieces of context to answer the question at the end. 
+ONLY USE the following pieces of context to answer the question at the end.
+If the question is not about CANCER, or you do not think the context can provide the answer to question, SAY 'No Data'
 KEEP THE ANSWER SHORT
 
 
