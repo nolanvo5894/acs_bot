@@ -25,15 +25,15 @@ if 'buffer_memory' not in st.session_state:
 
 persist_directory = "acs_db"
 embedding = OpenAIEmbeddings()
-vectordb = Chroma(persist_directory=persist_directory, 
-                  embedding_function=embedding)
-# @st.cache
-# def load_vectordb():
-#     vectordb = Chroma(persist_directory=persist_directory, 
-#                     embedding_function=embedding)
-#     return vectordb
+# vectordb = Chroma(persist_directory=persist_directory, 
+#                   embedding_function=embedding)
+@st.cache_resource
+def load_vectordb():
+    vectordb = Chroma(persist_directory=persist_directory, 
+                    embedding_function=embedding)
+    return vectordb
 
-# vectordb = load_vectordb()
+vectordb = load_vectordb()
     
 
 
