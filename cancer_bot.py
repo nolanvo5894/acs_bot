@@ -36,7 +36,7 @@ prompt_template = """Read the question at the end.
 
 Use the following pieces of context to answer the question at the end. 
 If you don't think there are relevant infomation in the context, say you 'did not find relevant information in the database'.
-
+KEEP THE ANSWER SHORT
 
 
 {context}
