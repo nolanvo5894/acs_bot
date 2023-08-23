@@ -41,7 +41,7 @@ KEEP THE ANSWER SHORT
 {context}
 
 Question: {question}
-If the question above is NOT about CANCER, DO NOT ANSWER AND SAY 'No Data'
+
 """
 PROMPT = PromptTemplate(
     template=prompt_template, input_variables=["context", "question"]
