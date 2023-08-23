@@ -35,11 +35,11 @@ from langchain import PromptTemplate
 prompt_template = """Read the question at the end.
 
 Use the following pieces of context to answer the question at the end. 
-If you don't find any relevant infomation in the context, say you 'did not find relevant information in the database'.
+If you don't think there are relevant infomation in the context, say you 'did not find relevant information in the database'.
 
 
 
-Context: {context}
+{context}
 
 Question: {question}
 """
