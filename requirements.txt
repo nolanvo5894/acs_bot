@@ -1,8 +1,8 @@
-langchain=0.0.189
+langchain==0.0.189
 streamlit
 streamlit-chat
 streamlit-extras
-openai=0.27.7
-chromadb=0.3.25
+openai==0.27.7
+chromadb==0.3.25
 tiktoken
 pysqlite3-binary
