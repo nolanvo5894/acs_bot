@@ -32,9 +32,10 @@ vectordb = Chroma(persist_directory=persist_directory,
 
 from langchain import PromptTemplate
 
-prompt_template = """Read the question at the end.
-
+prompt_template = """
+You are an expert cancer researcher
 USE the following pieces of context to answer the question at the end.
+If you do not see relevant information in the context to answer, SAY that 'No Data'
 KEEP THE ANSWER SHORT
 
 
